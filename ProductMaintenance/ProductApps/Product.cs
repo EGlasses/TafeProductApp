@@ -54,7 +54,7 @@ namespace ProductApps
             set { wrapping = value; }
         }
 
-        private decimal GST
+        public decimal GST
         {
             get { return gst; }
             set { gst = value; }
@@ -73,6 +73,7 @@ namespace ProductApps
             TotalPayment = Price * Quantity;
             TotalCharge = TotalPayment + 25;
             Wrapping = TotalCharge + 5;
+            GST = (TotalPayment + 25 + 5) * (decimal)1.1;
         }
     }
 }
